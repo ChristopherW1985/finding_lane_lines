@@ -58,7 +58,7 @@ display_images(images, figsize = (15, 15))
 ```
 
 
-![png](output_1_0.png)
+![png](images/output_1_0.png)
 
 
 ## 2. Grayscale transformation
@@ -114,7 +114,7 @@ display_images([img_g1, img_g2], figsize = (15, 3))
 
 
 
-![png](output_3_1.png)
+![png](images/output_3_1.png)
 
 
 
@@ -128,7 +128,7 @@ display_images(images_gray, figsize = (15, 15))
 ```
 
 
-![png](output_4_0.png)
+![png](images/output_4_0.png)
 
 
 ## 3. Canny edge detection
@@ -162,7 +162,7 @@ display_images(images_canny, figsize = (15, 15))
 ```
 
 
-![png](output_7_0.png)
+![png](images/output_7_0.png)
 
 
 ## 4. Edge filtering based on edge orientation
@@ -244,7 +244,7 @@ print("Lines found by Hough transform: \n", lines)
 ```
 
 
-![png](output_12_0.png)
+![png](images/output_12_0.png)
 
 
     Lines found by Hough transform: 
@@ -377,7 +377,7 @@ display_images(images_filter_eo, figsize = (15, 15))
 ```
 
 
-![png](output_15_0.png)
+![png](images/output_15_0.png)
 
 
 
@@ -386,7 +386,7 @@ display_images(heatmaps, figsize = (15, 15))
 ```
 
 
-![png](output_16_0.png)
+![png](images/output_16_0.png)
 
 
 The filtering algorithm based on edge orientation works well. A good portion of noisy edges were filtered out. However, sometimes a subimage is zeroed although it contained a piece of the actual lane line marking. In order to fix this issue we apply a mask which looks at the neighbouring subimage. If any of the top-left, top-right or top subimages contains a piece of the lane line marking the current subimage is not zeroed.
@@ -427,7 +427,7 @@ display_images(images_filter_eo, figsize = (15, 15))
 ```
 
 
-![png](output_19_0.png)
+![png](images/output_19_0.png)
 
 
 
@@ -436,7 +436,7 @@ display_images(heatmaps, figsize = (15, 15))
 ```
 
 
-![png](output_20_0.png)
+![png](images/output_20_0.png)
 
 
 On the expense of some additional noisy edges the lane lines were reconstructed.
@@ -544,7 +544,7 @@ display_images(images_filter_g, figsize = (15, 15))
 ```
 
 
-![png](output_25_0.png)
+![png](images/output_25_0.png)
 
 
 ## 6. Region selection
@@ -593,7 +593,7 @@ display_images(images_reg, figsize = (15, 15))
 ```
 
 
-![png](output_27_0.png)
+![png](images/output_27_0.png)
 
 
 ## 6. Otsu's method
@@ -632,7 +632,7 @@ display_images(images_otsu_illustration, figsize = (15, 15))
 ```
 
 
-![png](output_29_0.png)
+![png](images/output_29_0.png)
 
 
 Otsu's method was applied to all images and is part of the pipeline.
@@ -645,7 +645,7 @@ display_images(images_otsu, figsize = (15, 15))
 ```
 
 
-![png](output_31_0.png)
+![png](images/output_31_0.png)
 
 
 ## 7. Hough transform: Finding lane lines
@@ -889,7 +889,7 @@ display_images(pic, figsize = (15, 15))
 ```
 
 
-![png](output_37_0.png)
+![png](images/output_37_0.png)
 
 
 ### Test of the full pipeline on videos
@@ -924,6 +924,10 @@ def process_video(video_input, video_output):
 
 %time process_video('challenge.mp4', 'challenge.mp4') 
 ```
+
+* [White lane line](https://www.youtube.com/watch?v=visIHRMtAzc)
+* [Yellow lane line](https://www.youtube.com/watch?v=T3CUTCC07bc)
+* [Challenge](https://www.youtube.com/watch?v=wYCKcxyzt90)
 
 ## 8. Conclusion
 
